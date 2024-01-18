@@ -1,0 +1,2 @@
+En este folder apareceran las listas o CRUD de los roles individulaes donde el usuario puede modificar, eliminar y agragar nuvos usuarios 
+pero mas que nada es mostrar todo en una lista 

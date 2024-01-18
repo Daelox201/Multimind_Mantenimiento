@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+.card{
+   
+    background-color: #ffffff;
+    width: 500px;
+}
+.termino{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.btn-upp{
+    padding: 1rem 2rem;
+    border-radius: 300PX;
+    background-color: #441B69 ;
+}
+
+.btn-upp:hover{
+    background-color: #573675;
+
+}
+input[type="number"] {
+    padding: 5px;
+    font-size: 16px;
+}
+.fondo{
+    background: #d2d6de; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

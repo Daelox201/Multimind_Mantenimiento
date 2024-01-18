@@ -1,0 +1,26 @@
+.btn-upp{
+    padding: 1rem 1rem;
+    border-radius: 50PX;
+    background-color: #441B69 ;
+  }
+
+  .letra{
+    color: white;
+  }
+  .card{
+    width: 500px;
+    height: 220px;
+  
+  }
+  .imgEstudiante{
+  
+    width: 200px;
+  }
+  .cursor{
+    cursor: pointer;
+    margin-right: 7px;
+  } 
+  .login{
+    background: #d2d6de; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

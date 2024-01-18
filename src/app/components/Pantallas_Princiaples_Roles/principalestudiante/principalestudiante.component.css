@@ -1,0 +1,55 @@
+.navbar {
+    flex: 1 1 auto;
+    background-color: #441B69 ;
+
+  }
+.navbar{
+  background-color: #441B69 ;
+  
+}
+.card-title{
+  font-family: 'Tajawal', sans-serif;
+  font-size: 25px;
+  color: black;
+}
+.letra2{
+  font-family: 'Tajawal', sans-serif;
+  font-size: 30px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.letra{
+  color: white;
+}
+
+.example-container {
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border: 1px solid #555;
+}
+.card{
+  width: 500px;
+  height: 220px;
+
+}
+.imgEstudiante{
+
+  width: 200px;
+}
+.cursor{
+  cursor: pointer;
+  margin-right: 7px;
+}   
+.upp{
+    
+  width: 110px;
+  height: 40px;
+}
+.fondo{
+  background-color: #e0e3e9;
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}

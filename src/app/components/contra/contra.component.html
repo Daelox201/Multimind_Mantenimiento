@@ -1,0 +1,46 @@
+<router-outlet></router-outlet>
+<div class="login">
+    <div class="card ">
+        <div class="card-body text-center">
+            <p  class="text-center letras">Cambiar contraseña</p><br>
+            <div *ngIf="loading ==true" class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            <form [formGroup]="forms" (ngSubmit)="cambiar()">
+                <div class="row mt-5">
+
+                 
+                        <!-- <h6 class="letras">Nombre</h6> -->
+
+                    <!-- <h6 class="letras">Correo</h6> -->
+                    <div class="input-group mb-3">
+
+                        <span class="input-group-text " id="basic-addon1">
+                            <i class="fa-solid fa-lock" ></i>
+                        </span>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" formControlName="password" placeholder="password"
+                                aria-label="psw" aria-describedby="basic-addon1">
+                            <label for="psw">Contraseña nueva</label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+
+                        <span class="input-group-text " id="basic-addon1">
+                            <i class="fa-solid fa-lock" ></i>
+                        </span>
+                        <div class="form-floating">
+                            <input type="password"  class="form-control" formControlName="password2" placeholder="password2"
+                                aria-label="psw" aria-describedby="basic-addon1">
+                            <label for="psw">Repetir contraseña</label>
+                        </div>
+                    </div>
+                </div><br> <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit"  [disabled]="forms.invalid"  class="btn text-white btn-upp">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

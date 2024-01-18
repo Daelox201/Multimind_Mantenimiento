@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "talentyou-64867"
+  },
+  "targets": {
+    "talentyou-64867": {
+      "hosting": {
+        "Servicio": [
+          "talentyou-64867"
+        ]
+      }
+    }
+  }
+}

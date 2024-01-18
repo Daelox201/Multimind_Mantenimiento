@@ -1,0 +1,39 @@
+<router-outlet></router-outlet>
+
+<div class="row mt-5">
+    <div class="col-1">
+
+    </div>
+    <div class="col-auto">
+        <button type="button" (click)="crearAdivinanza()" class="btn btn-upp letra">
+            <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar adivinanza</button>
+    </div>
+
+    <div class="col-11 mx-auto mt-5">
+        <table class="table ">
+            <tbody>
+                <th scope="col">Adivinanza</th>
+                <th scope="col">Pista</th>
+                <th scope="col">Respuesta</th>
+
+                <tr *ngFor="let adi of listarAdivinanzas">
+
+                    <td>{{adi.adivinanza}}</td>
+                    <td>{{adi.pista }}</td>
+                    <td>{{adi.palabra}}</td>
+
+
+                    <td><i class="fa-solid fa-eye text-primary cursor" (click)="eye(adi.id)"></i></td>
+                    <td><i class="fa-solid fa-pen-to-square text-success cursor" (click)="Modificar(adi.id) "></i>
+                    </td>
+                    <td><i class="fa-solid fa-trash text-danger cursor" (click)="borrarLectura(adi.id)"></i></td>
+                    <!-- <td><i  *ngIf="docente.activo == 'danger'" class="fa-solid fa-ban text-{{docente.activo}} cursor" (click)="modalActivado(docente.id)"></i>
+                        <i  *ngIf="docente.activo == 'success'" class="fa-solid fa-circle-check text-{{docente.activo}} cursor" (click)="modalDesactivado(docente.id)"></i>
+                </td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

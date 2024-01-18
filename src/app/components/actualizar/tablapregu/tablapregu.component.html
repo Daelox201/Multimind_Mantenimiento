@@ -1,0 +1,41 @@
+<router-outlet></router-outlet>
+
+<br><br>
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-auto">
+            <button type="button" (click)="crearPregunta()" class="btn btn-upp letra">
+                <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar pregunta</button>
+        </div>
+        <br><br><br><br>
+        <div class="col-11 mx-auto">
+            <table class="table ">
+                <tbody>
+                    <th scope="col">Pregunta</th>
+                    <th scope="col">Correcta</th>
+                    <th scope="col">Mala 1</th>
+                    <th scope="col">Mala 2</th>
+                    <th scope="col">Mala 3</th>
+
+                    <tr *ngFor="let preg of listarPreguntas">
+
+                        <td>{{preg.pregunta}}</td>
+                        <td>{{preg.buena }}</td>
+                        <td>{{preg.mala1}}</td>
+                        <td>{{preg.mala2}}</td>
+                        <td>{{preg.mala3}}</td>
+                     
+                        
+                        <td><i class="fa-solid fa-eye text-primary cursor" (click)="eye(preg.id)"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square text-success cursor"(click)="Modificar(preg.id) "></i></td>
+                        <td><i class="fa-solid fa-trash text-danger cursor" (click)="borrarLectura(preg.id)"></i></td>
+                            <!-- <td><i  *ngIf="docente.activo == 'danger'" class="fa-solid fa-ban text-{{docente.activo}} cursor" (click)="modalActivado(docente.id)"></i>
+                                <i  *ngIf="docente.activo == 'success'" class="fa-solid fa-circle-check text-{{docente.activo}} cursor" (click)="modalDesactivado(docente.id)"></i>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,37 @@
+<router-outlet></router-outlet>
+
+<br><br>
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-auto">
+            <button type="button" (click)="crearLink()" class="btn btn-upp letra">
+                <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar video</button>
+        </div>
+        <br><br><br><br>
+        <div class="col-11 mx-auto">
+            <table class="table ">
+                <tbody>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Descripcion</th>
+
+                    <tr *ngFor="let video of listarVideos">
+
+                        <td>{{video.nombre}}</td>
+                        <td>{{video.src }}</td>
+                        <td>{{video.Descripcion}}</td>
+                     
+                        
+                        <td><i class="fa-solid fa-eye text-primary cursor" (click)="eye(video.id)"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square text-success cursor"(click)="Modificar(video.id) "></i></td>
+                        <td><i class="fa-solid fa-trash text-danger cursor" (click)="borrarLectura(video.id)"></i></td>
+                            <!-- <td><i  *ngIf="docente.activo == 'danger'" class="fa-solid fa-ban text-{{docente.activo}} cursor" (click)="modalActivado(docente.id)"></i>
+                                <i  *ngIf="docente.activo == 'success'" class="fa-solid fa-circle-check text-{{docente.activo}} cursor" (click)="modalDesactivado(docente.id)"></i>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

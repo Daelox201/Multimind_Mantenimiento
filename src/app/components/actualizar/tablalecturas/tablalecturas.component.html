@@ -1,0 +1,52 @@
+<router-outlet></router-outlet>
+
+<br><br>
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-auto">
+            <button type="button" (click)="crearLectura()" class="btn btn-upp letra">
+                <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar Lectura</button>
+        </div>
+        <br><br><br><br>
+        <div class="col-11 mx-auto">
+            <table class="table ">
+                <tbody>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">pregunta 1</th>
+                    <th scope="col">pregunta 2</th>
+                    <th scope="col">pregunta 3</th>
+                    <th scope="col">pregunta 4</th>
+                    <th scope="col">pregunta 5</th>
+                    <th scope="col">R1</th>
+                    <th scope="col">R2</th>
+                    <th scope="col">R3</th>
+                    <th scope="col">R4</th>
+                    <th scope="col">R5</th>
+                    <tr *ngFor="let lectura of listarLecturas">
+
+                        <td>{{lectura.titulo}}</td>
+                        <td>{{lectura.preg1 }}</td>
+                        <td>{{lectura.preg2}}</td>
+                        <td>{{lectura.preg3}}</td>
+                        <td>{{lectura.preg4}}</td>
+                        <td>{{lectura.preg5}}</td>
+                        <td>{{lectura.resp1}}</td>
+                        <td>{{lectura.resp2}}</td>
+                        <td>{{lectura.resp3}}</td>
+                        <td>{{lectura.resp4}}</td>
+                        <td>{{lectura.resp5}}</td>
+                     
+                        
+                        <td><i class="fa-solid fa-eye text-primary cursor" (click)="eye(lectura.id)"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square text-success cursor"(click)="Modificar(lectura.id) "></i></td>
+                        <td><i class="fa-solid fa-trash text-danger cursor" (click)="borrarLectura(lectura.id)"></i></td>
+                            <!-- <td><i  *ngIf="docente.activo == 'danger'" class="fa-solid fa-ban text-{{docente.activo}} cursor" (click)="modalActivado(docente.id)"></i>
+                                <i  *ngIf="docente.activo == 'success'" class="fa-solid fa-circle-check text-{{docente.activo}} cursor" (click)="modalDesactivado(docente.id)"></i>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

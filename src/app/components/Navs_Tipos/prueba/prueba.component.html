@@ -1,0 +1,32 @@
+<!-- As a link -->
+<router-outlet></router-outlet>
+<div  style="background-color: #441B69;">
+    <nav class="navbar">
+
+        <div class=" mb-3 letra col-1 ">
+           
+        </div>
+        <div class="mb-1 letra col-auto ">
+            <span><img src="./assets/logo.png" class="upp"></span>
+        </div>
+        <div class="mb-1 letra col-3">
+            <span><img src="./assets/chiquito.png" class="imgEstudiante2"></span>
+        </div>
+
+        <div class="mg-4 letra col-auto mx-auto text-center">
+            <span class="titulo text-center">MultiMind</span>
+        </div>
+        <div class="mg-4 letra col-auto mx-auto text-center letra2" >
+                <option class="letra2">{{perfi + " " + nombre + " " + apeP + " " + apeM}} </option>
+                
+        </div>
+        
+        <div class="mb-1 letra col-auto text-center">
+            <!-- <span class="letra letra2">UPP</span> -->
+            <i class="fa-solid fa-house letra cursor casa"  (click)="menu()"></i>
+        </div>
+        <div class="mg-4 letra col-auto mx-auto  letra2 "  >
+            <button type="button"*ngIf="loading" (click)="salir()" class="btn btn-outline-light redondeo buton">Logout</button>
+        </div>
+    </nav>
+</div>  

@@ -1,0 +1,21 @@
+<router-outlet></router-outlet>
+
+
+<!-- puzzle.component.html -->
+<!-- puzzle.component.html -->
+<div class="puzzle-grid">
+    <div *ngFor="let piece of puzzlePieces" class="puzzle-piece"
+         [style.background-image]="'url(' + piece.image + ')'"
+         [style.grid-column]="piece.position % 3 + 1"
+         [draggable]="!piece.correctPosition"
+         (dragstart)="onDragStart($event, piece)">
+    </div>
+  </div>
+  
+  <div class="drop-area" 
+       (dragover)="onDragOver($event)"
+       (drop)="onDrop($event, puzzlePieces[0])">
+    Arrastra las piezas aquí para completar el rompecabezas.
+  </div>
+  
+  

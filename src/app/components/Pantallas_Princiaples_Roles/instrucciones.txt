@@ -1,0 +1,2 @@
+aqui estaran todos las pantallas principales de cada rol en este caso de Admin, Directivo,
+Estudiante y docente donde se presentaran sus recuadros respectivos

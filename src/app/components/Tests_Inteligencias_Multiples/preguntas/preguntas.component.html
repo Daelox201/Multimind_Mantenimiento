@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+
+<div class="login">
+    <div class="card border-black mb-3 card"><br>
+    
+             <div class="row mt-12">
+                   <p class="text-center titulo h6">{{Pregunta()}}</p>
+                
+             </div>
+
+        <div class="card-body">
+            <div class="mx-auto text-center">
+                <h4 class="card-title"></h4>
+            </div>
+
+            <div class="row mt-12">
+                <!-- <div class="col-lg-12">
+                    <div class="input-group mb-3">
+                        <div class="mx-auto text-center">
+                            <button type="submit" class="btn text-white btn-upp"*ngIf="band == true" (click)="regresar()">Finalizar</button>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-lg-6">
+                    <div class="input-group mb-3    ">
+                        <div class="mx-auto text-center"><br>
+                            <button type="submit" class="btn text-white btn-upp"*ngIf="band == false" (click)="falso()">Falso</button>
+                        </div>
+                    </div>
+                </div>
+               
+
+                <div class="col-lg-6">
+                    <div class="input-group mb-3">
+                        <div class="mx-auto text-center"><br>
+                            <button type="submit" class="btn text-white btn-upp"*ngIf="band == false" (click)="verdadero()">Verdadero</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
