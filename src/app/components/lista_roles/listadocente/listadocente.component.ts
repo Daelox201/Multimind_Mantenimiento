@@ -98,7 +98,7 @@ export class ListadocenteComponent {
     });
     this.listarDocentes.sort((a, b) => {
       if(this.selectCarrera == 'Ing. Software'){
-   
+        
       this.listarDocentes = this.listarDocentes.filter(docente => docente.carrera == 'Ing. Software' );
     } 
     if( this.selectTiempo !== 'Todos'){
