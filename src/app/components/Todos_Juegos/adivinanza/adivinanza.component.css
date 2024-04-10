@@ -1,0 +1,60 @@
+.login{
+    background: #d2d6de; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* En tu archivo CSS personalizado */
+
+.card{
+   
+    background-color: #ffffff;
+    width: 900px;
+
+    
+
+}
+.cursor{
+   color: rgb(233, 143, 0);
+    cursor: pointer;
+  margin-right: 7px;  
+}
+.titulo{
+    transition: opacity 3s;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 40px;
+
+    
+
+}
+.termino{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.titulo.blur {
+    opacity: 3;
+}
+.btn-upp{
+    padding: 1rem 2rem;
+    border-radius: 300PX;
+    background-color: #3d49d1 ;
+}
+
+.btn-upp:hover{
+    background-color: #573675;
+
+}
+/* Estilos personalizados para los botones */
+.button-container {
+    display: flex;
+
+    justify-content: center; /* Alineación horizontal al centro */
+  }
+  
+  .button-container button {
+    margin: 15px; /* Espacio entre los botones (ajusta según tus preferencias) */
+  }
+  /* Estilos personalizados */

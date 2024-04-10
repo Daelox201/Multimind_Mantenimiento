@@ -1,0 +1,42 @@
+.cuerpo {
+    background-image: url('/assets/Fondo.jpeg');
+    background-size: portada;
+    background-position: centro;
+    background-repeat: sin repetición; /* Para evitar que la imagen se repita */
+
+    }
+
+      
+      .form-group {
+        margin-bottom: 10px;
+      }
+      
+      button {
+        background-color: #f9f9f9;
+        border: 1px solid #121111;
+        color: rgb(5, 5, 5);
+        font-family: 'Times New Roman', serif;
+        margin-top: 10px;
+      }
+      
+      .form-group1 {
+        color: rgb(236, 242, 236);
+        font-family: 'Times New Roman', serif;
+      }
+
+      .form-group2 {
+        color: rgb(236, 242, 236);
+        font-family: 'Times New Roman', serif;
+      }
+
+      h2 {
+        color: rgb(236, 242, 236);
+        font-family: 'piedra', sans-serif ;
+        font-size: 55px;
+        text-align: center;
+      }
+
+      .imgLogin{
+        width: 70px;
+        align-items: center;
+    }

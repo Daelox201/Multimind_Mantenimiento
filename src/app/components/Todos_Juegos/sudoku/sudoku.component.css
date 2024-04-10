@@ -1,0 +1,56 @@
+/* Estilos del componente */
+.sudoku-solver-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.sudoku-board {
+  width: 360px;
+  height: 360px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-gap: 3px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.sudoku-board input[type="number"] {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+.sudoku-board input[type="number"]:focus {
+  background-color: #f2f2f2;
+}
+
+.solved-sudoku {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sudoku-solution {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00a000;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

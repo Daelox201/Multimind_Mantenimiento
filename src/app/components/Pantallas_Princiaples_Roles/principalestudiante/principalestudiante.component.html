@@ -1,0 +1,78 @@
+<router-outlet></router-outlet>
+<div class="fondo">
+    <div>
+        <nav class="navbar" style="background-color: #862bd641;">
+            <div class="row col-lg-auto mx-auto mb-auto text-center">
+
+
+                <div class="col-auto ">
+                    <span>Int. Verbal: {{this.IL}}</span>
+                </div>
+                <div class=" col-auto ">
+                    <span>Int. Logico-Matmatico: {{this.ILM}}</span>
+                </div>
+                <div class=" col-auto ">
+                    <span>Int Visual Espacial: {{this.IVE}}</span>
+                </div>
+                <div class=" col-auto ">
+                    <span>Int Kinestesica: {{this.IKC}}</span>
+                </div>
+                <div class=" col-auto">
+                    <span>Int. Musical: {{this.IM}}</span>
+                </div>
+                <div class=" col-auto">
+                    <span>Int. Interpersonal: {{this.IINTER}}</span>
+                </div>
+                <div class=" col-auto">
+                    <span>Int. Intrapersonal: {{this.IITRA}}</span>
+                </div>
+
+
+            </div>
+
+        </nav>
+    </div>
+
+
+<br>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+          <div *ngIf="test == true" class="card text-center mt-3 mb-3 border-dark mb-3 cursor" (click)="testMultiple()"
+              style="width: 18rem; height: 17rem;">
+              <div class="card-body">
+                  <h2 class="card-title">Test Inteligencias Multiples</h2>
+                  <img src="./assets/LogoFinal.png" class="imgEstudiante">
+              </div>
+          </div>
+      </div>
+
+
+      <div class="col-auto">
+          <div class="card text-center mt-3 mb-3 border-dark mb-3 cursor" (click)="resultados()" style="width: 18rem; height: 17rem;">
+              <div class="card-body">
+                  <h2 class="card-title">Resultados</h2>
+                  <img src="./assets/5716795.png" class="imgEstudiante">
+              </div>
+          </div>
+      </div>
+
+      <div class="col-auto">
+          <div class="card text-center mt-3 mb-3 border-dark mb-3 cursor" (click)="forta()" style="width: 18rem; height: 17rem;">
+              <div class="card-body">
+                  <h2 class="card-title">Fortalecimiento</h2>
+                  <img src="./assets/thinking.png" class="imgEstudiante">
+              </div>
+          </div>
+      </div>
+
+       <div class="col-auto">
+         <div class="card text-center mt-3 mb-3 border-dark mb-3 cursor" (click)="contras2()" style="width: 18rem; height: 17rem;">
+             <div class="card-body">
+                 <h2 class="card-title">Cambiar contraseña</h2>
+                 <img src="./assets/candado.png" class="imgEstudiante">
+             </div>
+         </div>
+       </div>
+        
+    </div>
+</div>

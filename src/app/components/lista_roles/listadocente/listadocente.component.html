@@ -1,0 +1,116 @@
+<router-outlet></router-outlet>
+
+<br><br>
+    <div class="row">
+        <div class="col-1">
+
+        </div>
+        <div class="col-auto">
+            <button type="button" (click)="crearDocente()" class="btn btn-upp letra">
+                <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar Docente</button>
+        </div>
+        
+        <div class="col-2">
+            <form [formGroup]="forms">
+                <div class="col-auto">
+        
+                    <div class="form-floating col-auto">
+                        <select class="form-select form-select-lg" [(ngModel)]="selectCarrera" formControlName="Carrera"
+                            aria-label="Carrera" (click)="refresh()" aria-describedby="basic-addon1">
+                            <option [value]="carreras.value" *ngFor="let carreras of carreras">{{carreras.nombre}}</option>
+                        </select>
+        
+                        <label for="Carrera">Carrera</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-2">
+            <div class="col-auto">
+                <form [formGroup]="forms">
+                    <div class="input-group mb-3">
+                        <div class="form-floating">
+        
+                            <select class="form-select form-select-lg" [(ngModel)]="selectTiempo" formControlName="tiempo"
+                                aria-label="tiempo" (click)="refresh()" aria-describedby="basic-addon1">
+                                <option [value]="tiempo.value" *ngFor="let tiempo of tiempo">{{tiempo.nombre}}</option>
+                            </select>
+                            <label for="tiempo">Tiempo</label>
+                        </div>
+        
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="col-auto">
+                <form [formGroup]="forms">
+                    <div class="input-group mb-3">
+                        <div class="form-floating">
+        
+                            <select class="form-select form-select-lg" [(ngModel)]="selectstatus" formControlName="status"
+                                aria-label="status" (click)="refresh()" aria-describedby="basic-addon1">
+                                <option [value]="status.value" *ngFor="let status of status">{{status.nombre}}</option>
+                            </select>
+                            <label for="status">Status</label>
+                        </div>
+        
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+        <!-- <div class="col-auto">
+            <button type="submit" [disabled]="forms.invalid" (click)="ngOnInit()" class="btn text-white btn-upp">
+                <i class="fa-solid fa-magnifying-glass"></i>&nbsp; Buscar </button>
+        </div> -->
+        <div class="col-auto">
+            <button type="submit" *ngIf="this.selectTiempo !== 'Todos' || this.selectCarrera !== 'Todos' || this.selectstatus !== 'Ambos'" [disabled]="forms.invalid" [disabled]="forms.invalid" (click)="reset()" class="btn text-white btn-upp">
+                <i class="fa-solid fa-rotate"></i> &nbsp; Reset</button>
+        </div>
+
+    
+     
+
+        <br><br><br><br>
+        <div class="col-11 mx-auto">
+            <table class="table ">
+                <tbody>
+                    <th scope="col">NNS</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tiempo</th>
+                    <th scope="col">PE</th>
+                    <th scope="col">Correo</th>
+                    <!-- <th scope="col">(CL)</th>
+                    <th scope="col">(CMCBCT)</th>
+                    <th scope="col">(CD)</th>
+                    <th scope="col">(AA)</th>
+                    <th scope="col">(CSC)</th>
+                    <th scope="col">(SIEE)</th>
+                    <th scope="col">(CEC)</th> -->
+                    <tr *ngFor="let docente of listarDocentes">
+
+                        <td>{{docente.matricula}}</td>
+                        <td>{{docente.nombre + " "+ docente.apellidoPaterno + " "+ docente.apellidoMaterno}}</td>
+                        <td>{{docente.tiempo}}</td>
+                        <td>{{docente.carrera}}</td>
+                        <td>{{docente.correo}}</td>
+                        <!-- <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td> -->
+                        
+                        <td><i class="fa-solid fa-eye text-primary cursor" (click)="eye(docente.id)"></i></td>
+                        <td><i class="fa-solid fa-pen-to-square text-success cursor"(click)="Modificar(docente.id) "></i></td>
+                            <td><i  *ngIf="docente.activo == 'danger'" class="fa-solid fa-ban text-{{docente.activo}} cursor" (click)="modalActivado(docente.id)"></i>
+                                <i  *ngIf="docente.activo == 'success'" class="fa-solid fa-circle-check text-{{docente.activo}} cursor" (click)="modalDesactivado(docente.id)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

@@ -1,0 +1,30 @@
+/* puzzle.component.css */
+.puzzle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 100px); /* Cambia el número de columnas según tu rompecabezas */
+  grid-gap: 10px;
+}
+
+.puzzle-piece {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.drop-area {
+  width: 300px; /* Ancho de la zona de destino */
+  height: 300px; /* Alto de la zona de destino */
+  border: 2px dashed #000;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}

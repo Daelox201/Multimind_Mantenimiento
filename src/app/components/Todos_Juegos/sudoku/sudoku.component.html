@@ -1,0 +1,28 @@
+<div class="sudoku-solver-container">
+  <h2 class="text-center">Sudoku Solver</h2>
+  <div class="sudoku-board text-center">
+    <ng-container *ngFor="let value of sudokuData; let i = index">
+      <input
+        type="number"
+        [(ngModel)]="sudokuData[i]"
+        [id]="'cell-' + i"
+        min="0"
+        max="9"
+      />
+      <ng-container *ngIf="(i + 1) % 9 === 0"><br /></ng-container>
+    </ng-container>
+  </div>
+  <button class="btn btn-primary mt-3" (click)="solveSudoku()">Solve Sudoku</button>
+  <div class="solved-sudoku mt-3" *ngIf="solvedSudoku.length > 0">
+    <h3 class="text-center">Solved Sudoku</h3>
+    <table class="sudoku-board mx-auto">
+      <tr *ngFor="let row of solvedSudoku; let rowIndex = index">
+        <td *ngFor="let value of row; let colIndex = index">{{ value }}</td>
+      </tr>
+    </table>
+    <p class="sudoku-solution" *ngIf="isSudokuSolved">¡Sudoku resuelto con éxito!</p>
+  </div>
+</div>
+
+
+

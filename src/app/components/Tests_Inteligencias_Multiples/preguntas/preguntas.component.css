@@ -1,0 +1,35 @@
+.login{
+    background: #d2d6de; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+   
+    background-color: #ffffff;
+    width: 900px;
+    height: 350px;
+    
+
+}
+.titulo{
+   
+    font-family: 'Tajawal', sans-serif;
+    font-size: 40px;
+
+    
+
+}
+.btn-upp{
+    padding: 1rem 5rem;
+    border-radius: 300PX;
+    background-color: #3d49d1 ;
+}
+
+.btn-upp:hover{
+    background-color: #573675;
+
+}

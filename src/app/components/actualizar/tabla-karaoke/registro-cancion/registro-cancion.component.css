@@ -1,0 +1,52 @@
+.login{
+
+    background-color: #e0e3e9;
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-family: 'Tajawal', sans-serif;
+    font-size: 40px;
+}
+.card{
+   
+    background-color: #ffffff;
+    width: 1000px;
+
+    
+
+}
+
+.letras{
+    color: black;
+}
+
+.green-icon{
+    color: #198754;
+}
+
+.red-icon{
+    color: #Dc3545;
+  
+}
+
+.btn-upp{
+    padding: 1rem 2rem;
+    border-radius: 300PX;
+    background-color: #441B69 ;
+
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-upp:hover{
+    background-color: #573675;
+
+}

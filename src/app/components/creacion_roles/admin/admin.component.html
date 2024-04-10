@@ -1,0 +1,45 @@
+<router-outlet></router-outlet>
+<div class="login">
+    <div class="card ">
+        <div class="card-body">
+            <p class="text-center letras">Administrador</p>
+            <form [formGroup]="forms" (ngSubmit)="crear()">
+                <div class="row mt-5">
+
+                 
+                        <!-- <h6 class="letras">Nombre</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="" class="form-control" formControlName="email" placeholder="email"
+                                     aria-label="User" aria-describedby="basic-addon1">
+                                <label for="User">Email</label>
+                            </div>
+                        </div>
+      
+ 
+
+                    <!-- <h6 class="letras">Correo</h6> -->
+                    <div class="input-group mb-3">
+
+                        <span class="input-group-text " id="basic-addon1">
+                            <i class="fa-solid fa-lock" ></i>
+                        </span>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" formControlName="password" placeholder="password"
+                                aria-label="psw" aria-describedby="basic-addon1">
+                            <label for="psw">Contraseña</label>
+                        </div>
+                    </div>
+                </div><br> <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit"  class="btn text-white btn-upp">Registro</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div> 

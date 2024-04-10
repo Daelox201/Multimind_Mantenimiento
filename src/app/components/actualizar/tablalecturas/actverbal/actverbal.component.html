@@ -1,0 +1,144 @@
+<router-outlet></router-outlet>
+
+<!-- Button trigger modal -->
+<div class="login">
+    <div class="card ">
+        <div class="card-body">
+            <p class="text-center letras">Crear Lectura</p>
+            <!-- <div *ngIf="loading" class="d-flex justify-content-center ">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div> --> <br><br>
+            <form [formGroup]="form" (ngSubmit)="crear()">
+                <div class="row mt-5">
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" formControlName="titulo" ></textarea>
+                            <label for="Carrera">Titulo de la lectura</label>
+                        </div>
+                    <br>
+                      </div>
+
+                    
+              <div class="col-12">
+             
+                      <textarea class="form-control" placeholder="Lectura" formControlName="lectura" rows="12" ></textarea>
+                      
+                      <br>
+              </div>
+                
+                <div class="col-lg-9">
+                    <div class="form-floating">
+                    <textarea class="form-control" formControlName="preg1" ></textarea>
+                    <label for="Carrera">Pregunta 1</label>
+                </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="input-group mb-3"> 
+                       <div class="form-floating">
+
+                            <select class="form-select form-select-lg" [(ngModel)]="R1" formControlName="resp1"
+                               aria-label="Carrera" aria-describedby="basic-addon1">
+                                <option [value]="respuestas.value" *ngFor="let respuestas of respuestas">{{respuestas.nombre}}</option>
+                            </select>
+                            <label for="Carrera">Respuesta 1</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ----------------------------------------------------------------- -->
+                <div class="col-lg-9">
+                    <div class="form-floating">
+                    <textarea class="form-control" formControlName="preg2"></textarea>
+                    <label for="Carrera">Pregunta 2</label>
+                </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="input-group mb-3"> 
+                       <div class="form-floating">
+
+                            <select class="form-select form-select-lg" [(ngModel)]="R2" formControlName="resp2"
+                               aria-label="Carrera" aria-describedby="basic-addon1">
+                                <option [value]="respuestas.value" *ngFor="let respuestas of respuestas">{{respuestas.nombre}}</option>
+                            </select>
+                            <label for="Carrera">Respuesta 2</label>
+                        </div>
+                    </div>
+                </div>
+                  <!-- ----------------------------------------------------------------- -->
+                  <div class="col-lg-9">
+                    <div class="form-floating">
+                    <textarea class="form-control" formControlName="preg3" ></textarea>
+                    <label for="Carrera">Pregunta 3</label>
+                </div>
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="input-group mb-3"> 
+                       <div class="form-floating">
+
+                            <select class="form-select form-select-lg" [(ngModel)]="R3" formControlName="resp3"
+                               aria-label="Carrera" aria-describedby="basic-addon1">
+                                <option [value]="respuestas.value" *ngFor="let respuestas of respuestas">{{respuestas.nombre}}</option>
+                            </select>
+                            <label for="Carrera">Respuesta 3</label>
+                        </div>
+                    </div>
+                </div>
+                  <!-- ----------------------------------------------------------------- -->
+                <div class="col-lg-9">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="preg4"></textarea>
+                        <label for="Carrera">Pregunta 4</label>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <div class="input-group mb-3">
+                        <div class="form-floating">
+                
+                            <select class="form-select form-select-lg" [(ngModel)]="R4" formControlName="resp4"
+                                aria-label="Carrera" aria-describedby="basic-addon1">
+                                <option [value]="respuestas.value" *ngFor="let respuestas of respuestas">{{respuestas.nombre}}</option>
+                            </select>
+                            <label for="Carrera">Respuesta 4</label>
+                        </div>
+                    </div>
+                </div>
+
+                  <!-- ----------------------------------------------------------------- -->
+                <div class="col-lg-9">
+                    <div class="form-floating">
+                        <textarea class="form-control" formControlName="preg5"></textarea>
+                        <label for="Carrera">Pregunta 5</label>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <div class="input-group mb-3">
+                        <div class="form-floating">
+                
+                            <select class="form-select form-select-lg" [(ngModel)]="R5" formControlName="resp5"
+                                aria-label="Carrera" aria-describedby="basic-addon1">
+                                <option [value]="respuestas.value" *ngFor="let respuestas of respuestas">{{respuestas.nombre}}</option>
+                            </select>
+                            <label for="Carrera">Respuesta 5</label>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                </div>
+                <div class="col-12 text-center">
+                    <br> <br>
+                    <button type="submit"  [disabled]="form.invalid" class="btn text-white btn-upp">Guardar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

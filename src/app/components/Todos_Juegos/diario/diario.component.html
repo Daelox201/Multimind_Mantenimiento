@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+
+<div class="login">
+    <br> <br>
+
+
+    <div class="col-auto mx-5">
+        <button type="button" (click)="newDiario()" class="btn btn-upp letra">
+            <i class="fa-solid fa-id-badge"></i>&nbsp; Escribir</button>
+    </div>
+
+    <div class="col-2">
+        <form [formGroup]="forms">
+            <div class="col-auto">
+    
+            </div>
+        </form>
+    </div>
+    <div class="row col-lg-auto mx-auto mb-auto mt-2">
+        <div class="card mx-auto m-3 mb-3 border-dark mb-3" style="width: 26rem; height: 39rem;"
+            *ngFor="let diario of listarDiarios">
+            <div class="card-body">
+                <div class=" d-flex justify-content-between">
+                    <h6 class="card-title">{{diario.fecha}}</h6>
+                    <i class="fa-solid fa-trash text-danger cursor " (click)="borrarLectura(diario.id)"></i>
+                </div>
+                <h2 class="card-title text-center">{{diario.titulo}}</h2><br>
+                <h3 class="card-title text">{{diario.sentimiento}}</h3>
+                <h5>{{diario.descripcion}}</h5><br>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

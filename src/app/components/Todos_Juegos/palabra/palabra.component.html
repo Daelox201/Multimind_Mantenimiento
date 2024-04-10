@@ -1,0 +1,31 @@
+<router-outlet></router-outlet>
+
+<div class="fondo">
+
+    <div class="card ">
+        <div class="card-body text-center">
+
+            <h1>Juego de Adivinar la Palabra</h1>
+            <div class="game">
+                <div class="output">
+                    <h1 id="word-display " class="titulo">{{ palabraMostrada }}</h1>
+                    <h1 id="guessed-letters " class="titulo">{{ letrasAdivinadas }}</h1>
+                    <p id="message ">{{ mensaje }}</p>
+                </div>
+                <form [formGroup]="forms">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="letter-input" [(ngModel)]="letra"
+                        formControlName="letra" placeholder="numeros"  aria-describedby="basic-addon1">
+                        <label for="">Adivina una letra</label>
+                    </div>
+
+
+                    <br><br>
+                    <button [disabled]="forms.invalid" class="btn text-white btn-upp" (click)="adivinarLetra()">Adivinar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>

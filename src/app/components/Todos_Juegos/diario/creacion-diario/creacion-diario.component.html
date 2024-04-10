@@ -1,0 +1,55 @@
+<router-outlet></router-outlet>
+
+<div class="login">
+    <div class="card ">
+        <div class="card-body">
+            <p class="text-center letras">Mi diario</p>
+
+            <form [formGroup]="form" (ngSubmit)="crear()">
+                <div class="row mt-5">
+
+                    <div class="col-2">
+                        <div class="form-floating">
+                            <input class="form-control" placeholder="Disabled input" aria-label="Disabled input example"
+                                placeholder="Fecha"  disabled>
+                            <label for="floatingInputDisabled">{{ fechaActual | date:'dd/MM/yyyy' }}</label>
+                        </div>
+                        <br>
+                    </div>
+
+
+                    <div class="col-6">
+                        <div class="form-floating">
+                            <input class="form-control" placeholder="Descripcion" formControlName="titulo" maxlength="35">
+                            <label>Titulo</label>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-floating">
+
+                            <select class="form-select form-select-lg" [(ngModel)]="selectEmocion" formControlName="emocion"
+                               aria-label="emociones" aria-describedby="basic-addon1">
+                                <option [value]="emociones.value" *ngFor="let emociones of emociones">{{emociones.nombre}}</option>
+                            </select>
+                            <label for="emociones">Emocion</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                   
+                            <textarea class="form-control" rows="13" placeholder="Descripcion" formControlName="descripcion" maxlength="1300"></textarea>
+
+                    
+                        <br>
+                    </div>
+
+                    <div class="col-12 text-center">
+                        <br> <br>
+                        <button type="submit" [disabled]="form.invalid" class="btn text-white btn-upp">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

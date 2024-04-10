@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+
+<br><br>
+    <div class="row">
+        <div class="col-1">
+        </div>
+        <div class="col-auto">
+            <button type="button" (click)="crearPalabra()" class="btn btn-upp letra">
+                <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar palabra</button>
+        </div>
+        <br>
+        <div class="col-4 mx-auto">
+            <table class="table ">
+                <tbody>
+                    <th scope="col">Palabra</th>
+
+
+                    <tr *ngFor="let word of ListarPalabras">
+                        
+                        <td>{{word.palabra}}</td>
+                     
+                        
+                        <!-- <td><i class="fa-solid fa-eye text-primary cursor" (click)="eye(preg.id)"></i></td> -->
+                        <td><i class="fa-solid fa-pen-to-square text-success cursor"(click)="Modificar(word.id) "></i></td>
+                        <td><i class="fa-solid fa-trash text-danger cursor" (click)="borrarLectura(word.id)"></i></td>
+                            <!-- <td><i  *ngIf="docente.activo == 'danger'" class="fa-solid fa-ban text-{{docente.activo}} cursor" (click)="modalActivado(docente.id)"></i>
+                                <i  *ngIf="docente.activo == 'success'" class="fa-solid fa-circle-check text-{{docente.activo}} cursor" (click)="modalDesactivado(docente.id)"></i>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

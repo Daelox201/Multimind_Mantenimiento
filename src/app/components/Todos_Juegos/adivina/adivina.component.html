@@ -1,0 +1,29 @@
+<!-- adivina.component.html -->
+
+
+<router-outlet ></router-outlet>
+
+<div class="fondo">
+
+    <div class="card ">
+        <div class="card-body">
+            <h1>Adivina el Número</h1>
+            <p>Estoy pensando en un número entre 1 y 100.</p>
+            <form [formGroup]="forms" >
+                <div class="form-floating">
+                    <input type="text" class="form-control" 
+                        formControlName="numeros"   placeholder="numeros" minlength="1" maxlength="3" aria-describedby="basic-addon1">
+                    <label for="">Número</label>
+                </div>
+                <br><br>
+                <div class="d-grid gap-2 col-5 mx-auto">
+                    <button [disabled]="forms.invalid" class="btn text-white btn-upp" (click)="verificarSuposicion()">Adivinar</button>
+                  <br>
+                    <p *ngIf="mensaje" class="termino">{{ mensaje }}</p>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

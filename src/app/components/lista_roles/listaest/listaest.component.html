@@ -1,0 +1,113 @@
+<router-outlet></router-outlet>
+
+<br><br>
+
+<div class="row ">
+    <div class="col-1">
+
+    </div>
+    <div class="col-auto">
+        <button type="button" (click)="crearEstudiante()" class="btn btn-upp letra">
+            <i class="fa-solid fa-id-badge"></i>&nbsp; Registrar Estudiante</button>
+    </div>
+    
+    <div class="col-2">
+        <form [formGroup]="forms">
+            <div class="col-auto">
+    
+                <div class="form-floating col-auto">
+                    <select class="form-select form-select-lg" [(ngModel)]="selectCarrera" formControlName="Carrera"
+                        aria-label="Carrera" (click)="refresh()" aria-describedby="basic-addon1">
+                        <option  [value]="carreras.value" *ngFor="let carreras of carreras">{{carreras.nombre}}</option>
+                    </select>
+    
+                    <label for="Carrera">Carrera</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-2">
+        <div class="col-auto">
+            <form [formGroup]="forms">
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+    
+                        <select class="form-select form-select-lg" [(ngModel)]="selectTutor" formControlName="Tutor"
+                            aria-label="Tutor" (click)="refresh()" aria-describedby="basic-addon1">
+                            <option  [value]="tutor.value" *ngFor="let tutor of tutor">{{tutor.nombre}}</option>
+                        </select>
+                        <label   for="Tutor">Tutor</label>
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="col-auto">
+            <form [formGroup]="forms">
+                <div class="input-group mb-3">
+                    <div class="form-floating">
+    
+                        <select class="form-select form-select-lg" [(ngModel)]="selectstatus" formControlName="status"
+                            aria-label="status" (click)="refresh()" aria-describedby="basic-addon1">
+                            <option [value]="status.value" *ngFor="let status of status">{{status.nombre}}</option>
+                        </select>
+                        <label for="status">Status</label>
+                    </div>
+    
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-auto">
+        <button type="submit" *ngIf="this.selectTutor !== 'Todos' || this.selectCarrera !== 'Todos' || this.selectstatus !== 'Ambos'" [disabled]="forms.invalid" (click)="reset()" class="btn text-white btn-upp">
+            <i class="fa-solid fa-rotate"></i> &nbsp; Reset</button>
+    </div>
+
+
+       
+        <div class="col-11 mx-auto">
+            <br><br>
+            <table class="table "  >
+                <tbody>
+                    <th scope="col">Matricula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">tutor</th>
+                    <th scope="col">PE</th>
+                    <th scope="col">Intentos</th>
+                    <th scope="col">(IL)</th>
+                    <th scope="col">(ILM)</th>
+                    <th scope="col">(IVE)</th>
+                    <th scope="col">(IKC)</th>
+                    <th scope="col">(IM)</th>
+                    <th scope="col">(IITRA)</th>
+                    <th scope="col">(IINTER)</th>
+                    <tr *ngFor="let alumno of listarAlumnos">
+
+                        <td>{{alumno.matricula}}</td>
+                        <td>{{alumno.nombre + " "+ alumno.apellidoPaterno + " "+ alumno.apellidoMaterno}}</td>
+                        <td>{{alumno.tutor}}</td>
+                        <td>{{alumno.carrera}}</td>
+                        <td>{{alumno.intentos}}</td>
+                        <td>{{alumno.IL}}</td>
+                        <td>{{alumno.ILM}}</td>
+                        <td>{{alumno.IVE}}</td>
+                        <td>{{alumno.IKC}}</td>
+                        <td>{{alumno.IM}}</td>
+                        <td>{{alumno.IITRA}}</td>
+                        <td>{{alumno.IINTER}}</td>
+                      
+                        <td ><i *ngIf="alumno.activo == 'success' && alumno.test == 'danger'" class="fa-solid fa-file-lines text-{{alumno.test}} cursor " (click)="modalExamenActivado(alumno.id)"></i>
+                            <i *ngIf="alumno.activo == 'success' && alumno.test == 'success'" class="fa-solid fa-file-lines text-{{alumno.test}} cursor " (click)="modalExamenDesactivado(alumno.id)"></i></td>
+                        
+                        <td ><i class="fa-solid fa-eye text-primary  cursor cursor" (click)="eye(alumno.id)"></i></td>
+                        <td ><i class="fa-solid fa-pen-to-square text-success cursor"(click)="Modificar(alumno.id) "></i></td>
+                        <td><i  *ngIf="alumno.activo == 'danger'" class="fa-solid fa-ban text-{{alumno.activo}} cursor" (click)="modalActivado(alumno.id)"></i>
+                            <i  *ngIf="alumno.activo == 'success'" class="fa-solid fa-circle-check text-{{alumno.activo}} cursor" (click)="modalDesactivado(alumno.id)"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

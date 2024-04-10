@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+
+<!-- Button trigger modal -->
+<div class="login">
+    <div class="card ">
+        <div class="card-body">
+            <p class="text-center letras">Registro de palabra</p>
+
+            <form [formGroup]="form" (ngSubmit)="crear()">
+                <div class="row mt-5">
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input class="form-control"placeholder="Descripcion"  formControlName="palabra">
+                            <label >Palabra</label>
+                        </div>
+                        <br>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="form-floating">
+                        <input class="form-control" placeholder="Descripcion" formControlName="palabra2">
+                        <label >Repite la plabra</label>
+                    </div>
+                        <br>
+                    </div>
+                    <div class="col-12 text-center">
+                        <br> <br>
+                        <button type="submit" [disabled]="form.invalid" class="btn text-white btn-upp">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

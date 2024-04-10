@@ -1,0 +1,49 @@
+.login{
+  background: #d2d6de; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  font-family: 'Tajawal', sans-serif;
+  font-size: 40px;
+}
+.card{
+ 
+  background-color: #ffffff;
+  width: 500px;
+
+  
+
+}
+
+.letras{
+  color: black;
+}
+
+.green-icon{
+  color: #198754;
+}
+
+.red-icon{
+  color: #Dc3545;
+
+}
+
+.btn-upp{
+  padding: 1rem 2rem;
+  border-radius: 300PX;
+  background-color: #441B69 ;
+
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-upp:hover{
+  background-color: #573675;
+
+}

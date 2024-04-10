@@ -1,0 +1,17 @@
+<!-- memory.component.html -->
+<router-outlet></router-outlet>
+
+<div class="fondo">
+    <div class="card cartafondo">
+        <div class="card-body ">
+                    <h1 class="text-center titulo">Memorama</h1>
+                    <h1 class="text-center">Intento: {{this.intento}}</h1>      
+            <div class="memory ">
+                <div class="card carta" *ngFor="let card of cards" (click)="flipCard(card)">
+                    <img
+                        [src]="card.isFlipped || matchedCards.includes(card) ? card.imageUrl : './assets/imgtestmultiple.png'">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

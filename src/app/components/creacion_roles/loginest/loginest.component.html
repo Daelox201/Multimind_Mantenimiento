@@ -1,0 +1,144 @@
+<router-outlet></router-outlet>
+<!-- Button trigger modal -->
+<div class="login">
+    <div class="card ">
+        <div class="card-body">
+            <p class="text-center letras">Estudiante</p>
+            <!-- <div *ngIf="loading" class="d-flex justify-content-center ">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div> -->
+            <form [formGroup]="form" (ngSubmit)="crear()">
+                <div class="row mt-5">
+
+                    <div class="col-lg-6">
+                        <!-- <h6 class="letras">Nombre</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-solid fa-user" [class.green-icon]="this.form.get('Nombre')?.valid"
+                                    [class.red-icon]="this.form.get('Nombre')?.invalid && this.form.get('Nombre')?.touched"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="Nombre" class="form-control" formControlName="Nombre" placeholder="Nombre"
+                                    aria-label="Nombre" aria-describedby="basic-addon1">
+                                <label for="Nombre">Nombre</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- <h6 class="letras">Apellido</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-solid fa-user" [class.green-icon]="this.form.get('ApellidoPaterno')?.valid"
+                                    [class.red-icon]="this.form.get('ApellidoPaterno')?.invalid && this.form.get('ApellidoPaterno')?.touched"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="text" pattern="[A-Za-z]+" class="form-control"
+                                    formControlName="ApellidoPaterno" placeholder="ApellidoPaterno"
+                                    aria-label="ApellidoPaterno" aria-describedby="basic-addon1">
+                                <label for="">Apellido Paterno</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- <h6 class="letras">Matricula</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-solid fa-user" [class.green-icon]="this.form.get('ApellidoMaterno')?.valid"
+                                    [class.red-icon]="this.form.get('ApellidoMaterno')?.invalid && this.form.get('ApellidoMaterno')?.touched"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="text" pattern="[A-Za-z]+" class="form-control"
+                                    formControlName="ApellidoMaterno" placeholder="ApellidoMaterno"
+                                    aria-label="ApellidoMaterno" aria-describedby="basic-addon1">
+                                <label for="">Apellido Materno</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- <h6 class="letras">Contraseña</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-sharp fa-solid fa-school-lock"
+                                    [class.green-icon]="this.form.get('Matricula')?.valid"
+                                    [class.red-icon]="this.form.get('Matricula')?.invalid && this.form.get('Matricula')?.touched"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="text" pattern="[0-9]+" class="form-control" minlength="10" maxlength="10"
+                                    formControlName="Matricula" placeholder="Matricula" aria-label="Matricula"
+                                    aria-describedby="basic-addon1">
+                                <label for="">Matricula</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h6 class="letras">Correo</h6> -->
+                    <div class="input-group mb-3">
+
+                        <span class="input-group-text " id="basic-addon1">
+                            <i class="fa-solid fa-at" [class.green-icon]="this.form.get('Username')?.valid"
+                                [class.red-icon]="this.form.get('Username')?.invalid && this.form.get('Username')?.touched"></i>
+                        </span>
+                        <div class="form-floating">
+                            <input type="text" class="form-control" formControlName="Username" placeholder="Correo"
+                                aria-label="Username" aria-describedby="basic-addon1">
+                            <label for="">Correo</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 ">
+                        <!-- <h6 class="letras">Nombre</h6> -->
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-sharp fa-solid fa-school-lock"
+                                    [class.green-icon]="this.form.get('Carrera')?.valid"
+                                    [class.red-icon]="this.form.get('Carrera')?.invalid && this.form.get('Carrera')?.touched"></i>
+                            </span>
+
+                            <div class="form-floating">
+
+                                <select class="form-select form-select-lg" [(ngModel)]="selectCarrera"
+                                    formControlName="Carrera" aria-label="Carrera" aria-describedby="basic-addon1">
+                                    <option [value]="carreras.value" *ngFor="let carreras of carreras">
+                                        {{carreras.nombre}}</option>
+                                </select>
+                                <label for="Carrera">Carrera</label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- <h6 class="letras">Apellido</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-solid fa-user" [class.green-icon]="this.form.get('Tutor')?.valid"
+                                    [class.red-icon]="this.form.get('Tutor')?.invalid && this.form.get('Tutor')?.touched"></i>
+                            </span>
+                            <div class="form-floating">
+
+                                <select class="form-select form-select-lg" [(ngModel)]="selectTutor"
+                                    formControlName="Tutor" aria-label="Tutor" aria-describedby="basic-addon1">
+                                    <option [value]="tutor.value" *ngFor="let tutor of tutor">{{tutor.nombre}}</option>
+                                </select>
+                                <label for="Tutor">Tutor</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <br> <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" [disabled]="form.invalid" class="btn text-white btn-upp">Registro</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<router-outlet></router-outlet>
+
+<div class="login">
+    <div class="card border-black mb-3 card">
+        <div class=" col-lg-auto text-end mt-3 mx-2">
+            <i class="fa-solid fa-circle-question fa-2x cursor" (click)="ayuda()"></i>
+         </div>
+        <div class="row justify-content-center">
+            <div class=" col-lg-auto  mt-1">
+                <p class="text h5">Intentos restantes: {{contador_mala}}</p>
+            </div>
+            <div class=" col-lg-auto  mx-5">
+            </div>
+            <div class=" col-lg-auto mt-1 ">
+                <p class="text h5">Preguntas correctas: {{contadorRespuestasCorrectas}}</p>
+            </div>
+        </div>
+        <div class="col-auto mt-3 mx-4">
+           
+                    <p class="text-center titulo h6">{{adivinanza}}</p>
+             
+        </div>
+        <div class="card-body">
+            <form [formGroup]="forms">
+
+            <div class="mx-auto text-center">
+                <h4 class="card-title"></h4>
+            </div>
+                <div class="row justify-content-center">
+                   <div class="col-5">
+                     <div class="form-floating">
+                         <input type="text" class="form-control" [ngStyle]="{'border': '2px solid ' + colors}"formControlName="resp"  [(ngModel)]="letra"
+                         aria-describedby="basic-addon1">
+                         <label for="">Respuesta</label>
+                     </div>
+                   </div>
+                </div>
+                <br><br>
+                <div class="d-grid gap-2 col-2 mx-auto ">
+                    <button  type="submit" [disabled]="forms.invalid" (click)="check()" class="btn text-white btn-upp">Adivinar</button>
+                    <br>
+                    <p *ngIf="mensaje" class="termino">{{ mensaje }}</p>
+                  
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

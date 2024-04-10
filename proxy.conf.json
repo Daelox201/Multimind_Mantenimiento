@@ -1,0 +1,8 @@
+{
+    "/api": {
+      "target": "https://sugoku.herokuapp.com",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
+  

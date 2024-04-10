@@ -1,0 +1,74 @@
+
+<router-outlet></router-outlet>
+
+<div class="login">
+    <div class="card border-black mb-3 card">
+    
+             <div class="row mt-12">
+                   <p class="text-center titulo h6">Resultados</p>
+             </div>
+
+        <div class="card-body">
+            <p class="text     h6">Intento: {{this.intento}}</p>
+            <div class="mx-auto text-center">
+                <h4 class="card-title"></h4>
+            </div>
+
+            <div class="row mt-12"><br>
+             
+           
+                <div class="col-lg-4">Inteligencia lingüística
+                    <div class="progress" role="progressbar" aria-label="Info example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar  bg-{{color}} "  style="width: {{this.IL *10*2}}%">{{this.IL}}</div>
+                      </div><br>
+                </div>
+
+                <div class="col-lg-4">Inteligencia Logico Matematico
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-{{color2}}" style="width: {{this.ILM *10*2}}%">{{this.ILM}}</div>
+                      </div>
+                </div>
+                <div class="col-lg-4">Inteligencia Visual-Espacial
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-{{color3}}" style="width: {{this.IVE *10*2}}%">{{this.IVE}}</div>
+                      </div>
+                </div>
+                <div class="col-lg-4">Inteligencia Kinestesica-Corporal
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-{{color4}}" style="width: {{this.IKC *10*2}}%">{{this.IKC}}</div>
+                      </div><br>
+                </div>
+                <div class="col-lg-4">Inteligencia Musical
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-{{color5}}" style="width: {{this.IM *10*2}}%">{{this.IM}}</div>
+                      </div>
+                </div>
+                <div class="col-lg-4">Inteligencia Intrapersonal
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-{{color7}}" style="width: {{this.IITRA *10*2}}%">{{this.IITRA}}</div>
+                      </div>
+                </div>
+                <div class="col-lg-4">Inteligencia Interpersonal
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar bg-{{color6}}" style="width: {{this.IINTER *10*2}}%">{{this.IINTER}}</div>
+                      </div>
+                </div>
+
+              
+            </div>
+            <div class="row mt-12">
+             
+
+                <div class="col-lg-12"><br><br>
+                    <div class="input-group mb-3">
+                        <div class="mx-auto text-center"><br>
+                            <button type="submit" class="btn text-white btn-upp" (click)="casa()">Volver al inicio</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>

@@ -1,0 +1,36 @@
+<router-outlet></router-outlet>
+
+<div class="login">
+    <div class="card ">
+        <div class="card-body">
+            <p class="text-center letras">Recuperar Contraseña</p>
+            <div *ngIf="loading" class="d-flex justify-content-center ">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>
+          
+            <form [formGroup]="forms" (ngSubmit)="login()">
+                <div class="row mt-5">
+                        <!-- <h6 class="letras">Nombre</h6> -->
+                        <div class="input-group mb-3">
+
+                            <span class="input-group-text " id="basic-addon1">
+                                <i class="fa-solid fa-user"></i>
+                            </span>
+                            <div class="form-floating">
+                                <input type="" class="form-control" formControlName="email" placeholder="email"
+                                    aria-label="User" aria-describedby="basic-addon1">
+                                <label for="User">Correo</label>
+                            </div>
+                        </div>
+      
+                </div><br> <br>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button type="submit" [disabled]="forms.invalid"  class="btn text-white btn-upp">Solicitar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

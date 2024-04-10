@@ -1,0 +1,33 @@
+<router-outlet></router-outlet>
+
+<div class="login">
+    <div class="card border-black mb-3 card">
+        <div class="row justify-content-center">
+            <div class=" col-lg-auto  mt-3">
+                <p class="text h5">Intentos restantes: {{contador_mala}}</p>
+            </div>
+            <div class=" col-lg-auto  mx-5">
+            </div>
+            <div class=" col-lg-auto mt-3">
+                <p class="text h5">Preguntas correctas: {{contadorRespuestasCorrectas}}</p>
+            </div>
+
+        </div>
+        <div class="col-auto mt-2">
+            <p class="text-center titulo h6">{{pregunta}}</p>
+        </div>
+        <div class="card-body">
+            <div class="mx-auto text-center">
+                <h4 class="card-title"></h4>
+            </div>
+            <div class="row col-lg-auto">
+                <div class="input-group button-container">
+                    <div class="mx-auto text">
+                        <button type="submit" (click)="check(answer)" class="btn text-white btn-upp"
+                            *ngFor="let answer of shuffledAnswers">{{answer}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
