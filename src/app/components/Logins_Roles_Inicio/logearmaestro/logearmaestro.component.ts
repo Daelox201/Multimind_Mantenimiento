@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Firestore, addDoc,getDoc, doc,setDoc,collection,collectionData , getFirestore, FirestoreModule} from '@angular/fire/firestore';
+import { Firestore, collection, getDocs, query, where } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
-import { AdminlogService } from 'src/app/services/adminlog.service';
-import { AuthService } from 'src/app/services/auth.service';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-logearmaestro',
@@ -16,85 +15,70 @@ import Swal from 'sweetalert2';
 export class LogearmaestroComponent {
 
   id: string | undefined;
-
-  forms:FormGroup;
+  forms: FormGroup;
   loading = false;
   perfil = 'docente';
 
-  constructor(private fb: FormBuilder,
-    private adminlogService: AdminlogService,
+  constructor(
+    private fb: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
     private auth: AngularFireAuth,
     private authService: AuthService,
     private firebase: Firestore
-    ){
+  ) {
+    this.forms = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
-      this.forms = this.fb.group({
-        email: ['',Validators.required],
-        password: ['',[Validators.required]]
-    
-      })
- }
+  async login() {
+    const email = this.forms.value.email;
+    const password = this.forms.value.password;
 
- ngOnInit(): void{
+    const docenteCollectionRef = collection(this.firebase, 'docente');
+    const querySnapshot = await getDocs(query(docenteCollectionRef, where("correo", "==", email)));
 
-
- }
- modal(){
-  Swal.fire({
-    icon: 'error',
-    title: 'Acceso denegado',
-    text: 'Revise si todos los datos son correctos',
-  })
- }
- login(){
-const email = this.forms.value.email;
-const password = this.forms.value.password;
-
-this.adminlogService.login(this.forms.value).then(response=>{ //validando el formulario
-   this.loading = false;
-  this.loading = true;
-  this.auth.currentUser.then(async users => {//validando id de susuario
-    if (users && users.uid){//si existe el usuario 
-      const placeRef = doc(this.firebase, 'maestro', users.uid );//buscamos el usuario en la base de datos
-      const docSnap = await getDoc(placeRef);
-      if(docSnap.exists()){//si existe buscamos el perfil
+    if (!querySnapshot.empty) {
+      querySnapshot.forEach(async (docSnap) => {
         const data = docSnap.data();
-        this.id = data['id'];
-        const perfil = data['perfil'];//sacamos el perfil de la base de datos
+        const perfil = data['perfil'];
         const nombre = data['nombre'];
         const activo = data['activo'];
-        if(perfil == 'docente'){//comprobar si es estudiante
-          if (this.authService.login(perfil, activo)){
-          this.toastr.success('Inicio de sesión correcto', 'Bienvenido '+nombre);//damos bienvenida 
-          this.router.navigate(['/principalDocente/'+this.id+'']);//si es estudiente prosigue a la siguiente pagina
-        }
-      }
+        const psw = data['contraseña'];
+        this.id = data['id'];
+
+        if (password === psw && activo === 'activo') {
+          if (perfil === 'Docente') {
+            console.log( this.perfil);
+            console.log(this.authService.login(this.perfil, activo));
+            if (this.authService.login(this.perfil, activo)) {
+              
+              this.toastr.success('Inicio de sesión correcto', 'Bienvenido ' + nombre);
+              this.router.navigate(['/principalDocente/' + this.id]);
+            }
+          } else {
+            this.modal();
+          }
         } else {
-          this.modal(); 
-          this.loading = false;
+          this.modal();
         }
-    }else{
-       this.loading = false;
+      });
+    } else {
+      this.modal();
     }
-     this.loading = false;
-  })
- }).catch(error =>{
-  this.loading = true;
-  this.modal();   
-   this.loading = false;
-   })
-   this.loading = false;
+  }
+
+  modal() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Acceso denegado',
+      text: 'Revise si todos los datos son correctos',
+    });
+  }
+
+  contra() {
+    this.router.navigate(['/recuperar/']);
+  }
 }
-contra(){
-  this.router.navigate(['/recuperar/']);//si es estudiente prosigue a la siguiente pagina
-}
-
-}
-
- 
- 
- 
-
-

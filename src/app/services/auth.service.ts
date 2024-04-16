@@ -16,8 +16,8 @@ export class AuthService {
       this.isAuthenticated = true;
       return true;
     }
-    if (perfil === 'estudiante' ) {
-      if(activo === 'success'){
+    if (perfil === 'Estudiante' ) {
+      if(activo === 'activo'){
       this.isAuthenticated = true;
       return true;
       }if(activo === 'danger'){
@@ -27,18 +27,18 @@ export class AuthService {
     }
 
 
-    if (perfil === 'directivo' ) {
-    if(activo === 'success'){
+    if (perfil === 'Directivo' ) {
+    if(activo === 'activo'){
         this.isAuthenticated = true;
         return true;
-        }if(activo === 'danger'){
+        }if(activo === 'activo'){
           this.modalDirectivo();
           return false;
         }
 
 
     }if (perfil === 'docente' ) {
-      if(activo === 'success'){
+      if(activo === 'activo'){
         this.isAuthenticated = true;
         return true;
         }if(activo === 'danger'){
