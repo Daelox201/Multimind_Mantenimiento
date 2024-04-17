@@ -79,9 +79,11 @@ import { TablaAdivinanzaComponent } from './components/actualizar/tabla-adivinan
 import { RegistroAdivinanzaComponent } from './components/actualizar/tabla-adivinanza/registro-adivinanza/registro-adivinanza.component';
 import { ModificarAdivinanzaComponent } from './components/actualizar/tabla-adivinanza/modificar-adivinanza/modificar-adivinanza.component';
 import { AdivinanzaComponent } from './components/Todos_Juegos/adivinanza/adivinanza.component';
+import { ResgisterestudianteComponent } from './components/register_roles/resgisterestudiante/resgisterestudiante.component';
 
 
 const routes: Routes = [
+  {path: 'registerestudiante', component: ResgisterestudianteComponent},
   {path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
 //JUEGOSSSSSSSSSSSSSSSSSS-------------------------------------
