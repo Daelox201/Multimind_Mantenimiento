@@ -51,8 +51,8 @@ boton: boolean = true;
 
   this.form = this.fb.group({
     Nombre: ['', [Validators.required,Validators.maxLength(25), Validators.pattern(/^[a-zA-Z\s]*$/)]],
-    ApellidoPaterno: ['', [Validators.required,Validators.maxLength(25), Validators.pattern(/^[a-zA-Z\s]*$/)]],
-    ApellidoMaterno: ['', [Validators.required,Validators.maxLength(25), Validators.pattern(/^[a-zA-Z\s]*$/)]],
+    ApellidoPaterno: ['', [Validators.required,Validators.maxLength(25), Validators.pattern(/^[a-zA-Z]+( [a-zA-Z]+)*$/)]],
+    ApellidoMaterno: ['', [Validators.required, Validators.maxLength(25), Validators.pattern(/^[a-zA-Z]+( [a-zA-Z]+)*$/)]],
     Username: ['', [Validators.required,Validators.maxLength(35), Validators.email]],
     Matricula: ['', [Validators.required, Validators.pattern(/^\d+$/), Validators.minLength(10), Validators.maxLength(10)]] ,
     Carrera: ['',Validators.required],
